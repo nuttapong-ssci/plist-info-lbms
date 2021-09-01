@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    id="cordova-plugin-edit-plist-file"
-    version="0.0.3">
-    
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-edit-plist-file" version="0.0.3">
+
     <name>Edit Plist file</name>
-    
+
     <description>
         A cordova "plugin" that helps you indicate the modifications on the iOS's *-info.plist file.
         So it avoids you to directly edit the *-info.plist file.
@@ -16,36 +13,31 @@
     <author>Haythem OUEDERNI - haythem@nirbyapp.com </author>
 
     <keywords>cordova,whitelist,ios9,ecosystem:cordova,ordova-ios</keywords>
-    
+
     <license>MIT</license>
-    
+
     <engines>
         <!-- Requires > 3.3.* because of the custom Framework tag for iOS [CB-5238] -->
         <!-- Requires > 3.5.0 because of the custom Framework tag for Android [CB-6698] -->
         <engine name="cordova" version=">=3.5.0" />
     </engines>
-    
-    
-    
+
+
     <!-- ios -->
     <platform name="ios">
-        
+
         <!-- iOS9 whitelisting -->
         <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
-            <array>
-                <string>twitter</string>
-                <string>fb</string>
-                <string>whatsapp</string>
-                <string>itms-apps</string>
-                <string>youtube</string>
-                <string>soundcloud</string>
-                <string>fb-messenger</string>
-                <string>instagram</string>
-            </array>
+            <dict>
+                <key>NSPhotoLibraryUsageDescription</key> <!-- added this for photo library permission -->
+                <string>Need library access to upload images</string> <!-- added this for photo library permission -->
+                <key>NSCameraUsageDescription</key> <!-- added this for camera permission -->
+                <string>Need camera access to take pictures</string> <!-- added this for camera permission -->
+            </dict>
+
         </config-file>
-        
-        
-        
+
+
     </platform>
-    
+
 </plugin>
