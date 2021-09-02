@@ -24,10 +24,10 @@
 
 
     <!-- ios -->
-    <platform name="ios">
+    <!-- <platform name="ios"> -->
 
-        <!-- iOS9 whitelisting -->
-        <!-- <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+    <!-- iOS9 whitelisting -->
+    <!-- <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
             <dict>
                 <key>NSPhotoLibraryUsageDescription</key>
                 <string>Need library access to upload images</string>
@@ -37,11 +37,19 @@
 
         </config-file> -->
 
+    <!-- <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+            <string>Need camera access to take pictures</string>
+        </config-file> -->
+
+
+    <!-- </platform> -->
+
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
         <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
             <string>Need camera access to take pictures</string>
         </config-file>
-
-
     </platform>
 
 </plugin>
