@@ -48,7 +48,12 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
-            <string>Need camera access to take pictures</string>
+            <string>อนุญาต 'WHA LBMS' เพื่อเข้าถึงกล้องของคุณ ในการถ่ายภาพหรือถ่ายวีดีโอ ในรายการแจ้งซ่อม
+                Allow 'WHA LBMS' to access your camera to make a service request.</string>
+        </config-file>
+        <config-file parent="NSMicrophoneUsageDescription" target="*-Info.plist">
+            <string>อนุญาต 'WHA LBMS' เพื่อเข้าถึงไมโครโฟนของคุณ ในรายการแจ้งซ่อม
+                Allow 'WHA LBMS' to access your Microphone to make a service request.	</string>
         </config-file>
     </platform>
 
